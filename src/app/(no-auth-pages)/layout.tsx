@@ -8,5 +8,5 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   // document.documentElement.classList.add("dark");
-  return <Nav>{children}</Nav>;
+  return <div className=" h-screen flex items-center justify-center">{children}</div>;
 }

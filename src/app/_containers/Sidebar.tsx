@@ -8,10 +8,10 @@ import {
 } from "@heroicons/react/24/outline";
 import Link from "next/link";
 import React from "react";
-import NavButton, { NavButtonProps } from "../components/NavButton";
+import NavButton, { NavButtonProps } from "../_components/NavButton";
 import Image from "next/image";
-import UserCard from "./UserCard";
-import { useAppStore } from "../../../_stores/App/appStore";
+import UserCard from "../_components/UserCard";
+import { useAppStore } from "../_stores/App/appStore";
 import { XMarkIcon } from "@heroicons/react/24/solid";
 
 const buttonsData: NavButtonProps[] = [

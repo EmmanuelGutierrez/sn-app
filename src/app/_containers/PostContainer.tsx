@@ -1,5 +1,5 @@
 import React from "react";
-import Post from "../components/Post";
+import Post from "../_components/Post";
 
 const posts = [
   {
@@ -53,6 +53,7 @@ const posts = [
 ];
 
 const PostContainer = () => {
+  console.log("hola")
   return (
     <div className="flex flex-col items-center before:contet-[''] before:block before:bg-gray-light before:w-0.5 before:h-full before:absolute before:left-12 before:top-10 before:-z-10  before:opacity-70 relative">
       {posts.map((p, i) => (

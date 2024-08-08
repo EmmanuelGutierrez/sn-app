@@ -1,8 +1,8 @@
 import Image from "next/image";
 import { ClipboardDocumentListIcon } from "@heroicons/react/24/solid";
 import Link from "next/link";
-import Sidebar from "./container/Sidebar";
-import Bar from "./container/Bar";
+import Sidebar from "./Sidebar";
+import Bar from "../_components/Bar";
 
 export default function Nav({
   children,
