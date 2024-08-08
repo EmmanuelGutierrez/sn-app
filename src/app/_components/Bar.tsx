@@ -2,7 +2,7 @@
 import { Bars3Icon, MagnifyingGlassIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
 import React, { useState } from "react";
-import { useAppStore } from "../../../_stores/App/appStore";
+import { useAppStore } from "../_stores/App/appStore";
 
 const Bar = () => {
   const { userMenu, setUserMenu, setSideBar, sideBar } = useAppStore();
