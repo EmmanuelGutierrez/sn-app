@@ -1,12 +1,16 @@
-import Image from "next/image";
-import { ClipboardDocumentListIcon } from "@heroicons/react/24/solid";
 import Nav from "../_containers/Nav";
+import { getUserService } from "@/services/user";
 
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  // document.documentElement.classList.add("dark");
+  // const token = await getTokenCookie();
+  // // console.log("red", getTokenCookie()?.value);
+  // if (!token) {
+  //   redirect("login");
+  // }
+  // console.log(token)
   return <Nav>{children}</Nav>;
 }

@@ -3,4 +3,5 @@ export interface appStoreI {
   setUserMenu: (value: boolean) => void;
   sideBar: boolean;
   setSideBar: (value: boolean) => void;
+  
 }

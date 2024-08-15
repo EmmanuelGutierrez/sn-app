@@ -2,11 +2,15 @@ overwrite: true
 schema:
   - "http://localhost:3000/graphql"
 generates:
-  src/@types/codegen/graphql.tsx:
+  src/@types/codegen/:
     plugins:
       - "typescript"
       - "typescript-operations"
       - "typescript-react-apollo"
+    preset: client
+    presetConfig:
+      typesPath: ./graphql
+      gqlTagName: 'gql'
   src/@types/codegen/page.tsx:
     config:
       documentMode: external
@@ -14,4 +18,6 @@ generates:
     preset: import-types
     presetConfig:
       typesPath: ./graphql
+    
+ignoreNoDocuments: true
 
