@@ -14,10 +14,12 @@
     "@apollo/experimental-nextjs-app-support": "^0.11.2",
     "@heroicons/react": "^2.1.5",
     "clsx": "^2.1.1",
+    "cookies-next": "^4.2.1",
     "graphql": "^16.9.0",
     "next": "14.1.1",
     "react": "^18",
     "react-dom": "^18",
+    "react-hook-form": "^7.52.2",
     "zustand": "^4.5.4"
   },
   "devDependencies": {

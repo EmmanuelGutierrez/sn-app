@@ -1,11 +1,14 @@
 "use client";
+import { useLogout } from "@/hooks/logout";
+import { useAppStore } from "@/store/App/useAppStore";
 import { Bars3Icon, MagnifyingGlassIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
 import React, { useState } from "react";
-import { useAppStore } from "../_stores/App/appStore";
 
 const Bar = () => {
-  const { userMenu, setUserMenu, setSideBar, sideBar } = useAppStore();
+  const { userMenu, setUserMenu, setSideBar, sideBar } = useAppStore((store)=>store);
+  const logout = useLogout()
+
   return (
     <nav className="fixed top-0 z-40 w-full bg-white border-b border-gray-light ">
       <div className="px-3 py-3 lg:px-5 lg:pl-3">
@@ -99,6 +102,7 @@ const Bar = () => {
                       href="#"
                       className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white"
                       role="menuitem"
+                      onClick={() => logout()}
                     >
                       Sign out
                     </a>

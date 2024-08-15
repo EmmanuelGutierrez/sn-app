@@ -11,8 +11,9 @@ import React from "react";
 import NavButton, { NavButtonProps } from "../_components/NavButton";
 import Image from "next/image";
 import UserCard from "../_components/UserCard";
-import { useAppStore } from "../_stores/App/appStore";
 import { XMarkIcon } from "@heroicons/react/24/solid";
+// import { useAppStore } from "@/store/App/useAppStore";
+import { appStoreI } from "@/store/App/types";
 
 const buttonsData: NavButtonProps[] = [
   {
@@ -43,18 +44,19 @@ const buttonsData: NavButtonProps[] = [
 ];
 
 const Sidebar = () => {
-  const { setSideBar, sideBar } = useAppStore();
+  // const { setSideBar, sideBar } = useAppStore((state)=>state);
+  const sideBar=false
   return (
     <aside
       id="logo-sidebar"
       className={`fixed top-0 left-0 z-50 sm:w-80 w-full h-screen transition-transform -translate-x-${
-        sideBar ? "full" : "none"
+        sideBar ? "none" : "full"
       } bg-white-dark sm:translate-x-0 border-solid border-1 border-gray-light`}
       aria-label="Sidebar"
     >
       <div className="h-full overflow-y-auto bg-white-dark dark:bg-gray-800 relative">
         <XMarkIcon
-          onClick={() => setSideBar(!sideBar)}
+          // onClick={() => setSideBar(!sideBar)}
           className="sm:hidden size-7 strok-3 stroke-whitfill-white-dark fill-white-dark absolute right-3 top-2 z-40"
         />
         <UserCard />
