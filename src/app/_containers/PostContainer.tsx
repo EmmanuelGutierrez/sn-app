@@ -54,7 +54,7 @@ const posts = [
 
 const PostContainer = () => {
   return (
-    <div className="flex flex-col items-center before:contet-[''] before:block before:bg-gray-light before:w-0.5 before:h-full before:absolute before:left-12 before:top-10 before:-z-10  before:opacity-70 relative">
+    <div className="flex flex-col items-center before:contet-[''] before:block before:bg-gray-light before:w-0.5 before:h-full before:absolute before:left-6 before:top-10 before:-z-10  before:opacity-70 relative">
       {posts.map((p, i) => (
         <Post key={i} />
       ))}

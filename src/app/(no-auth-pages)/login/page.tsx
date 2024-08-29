@@ -1,6 +1,6 @@
 "use client";
-import { LoginInputDto } from "@/@types/codegen/graphql";
-import { colors } from "@/@types/colors";
+import { LoginInputDto } from "@/types/gql/graphql";
+import { colors } from "@/types/colors";
 import Button from "@/app/_components/common/Button";
 import Input from "@/app/_components/common/Input";
 import { useLoginService } from "@/hooks/login";
@@ -15,7 +15,7 @@ import { SubmitHandler, useForm } from "react-hook-form";
 
 const Page = () => {
   const { data, error, loading, login } = useLoginService();
-  const { setToken,token } = useUserStore((state) => state);
+  const { setToken, token } = useUserStore((state) => state);
   // const {refetch}=useUserService()
 
   // const token = getCookies();
@@ -46,7 +46,7 @@ const Page = () => {
     if (res.data?.login.token) {
       setCookie(res.data.login.token);
       setToken(res.data.login.token);
-       router.push('main')
+      router.push("main");
     }
   };
 
@@ -82,7 +82,9 @@ const Page = () => {
         >
           Password
         </Input>
-        <Button className="mt-6 w-36">Login</Button>
+        <Button loading={loading} disabled={!!token} className="mt-6 w-36">
+          Login
+        </Button>
       </form>
     </div>
   );

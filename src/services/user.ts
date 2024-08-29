@@ -1,6 +1,6 @@
 import { Query } from "@/@types/codegen/graphql";
 import { getClient } from "@/lib/apollo/apollo-client";
-import { meQuery } from "@/lib/apollo/querys/me";
+import { meQuery } from "@/gql/querys/me";
 import { getTokenCookie } from "@/lib/cookie/cookie";
 
 export const getUserService = async () => {

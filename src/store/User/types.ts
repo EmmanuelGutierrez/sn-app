@@ -1,8 +1,10 @@
-import { User } from "@/@types/codegen/graphql";
+import { MeQuery, User } from "@/types/gql/graphql";
 
 export interface UserStoreI {
-  user: User | null|undefined;
-  setUser: (value: User|null|undefined) => void;
+  user: MeQuery | null | undefined;
+  setUser: (value: MeQuery | null | undefined) => void;
   token: string | null | undefined;
   setToken: (value: string | null | undefined) => void;
+  loading: boolean;
+  setLoading: (value: boolean) => void;
 }

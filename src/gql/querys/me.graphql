@@ -1,0 +1,35 @@
+query Me {
+  me {
+    _id
+    name
+    username
+    email
+    profile_image {
+      _id
+      asset_id
+      public_id
+      format
+      resource_type
+      bytes
+      url
+      secure_url
+      folder
+      original_filename
+    }
+    following {
+      followDate
+      user {
+        _id
+        username
+      }
+    }
+    followers {
+      followDate
+      user {
+        _id
+        username
+      }
+    }
+    birth_date
+  }
+}

@@ -4,7 +4,7 @@ import React from "react";
 
 const Post = () => {
   return (
-    <div className=" p-6 min-h-48  rounded-lg flex ">
+    <div className=" py-6 min-h-48 mb-5 border-gray-dark b- rounded-lg flex ">
       <div className=" px-1 ">
         <button
           type="button"

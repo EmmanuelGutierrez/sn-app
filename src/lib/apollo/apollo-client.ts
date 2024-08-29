@@ -10,10 +10,9 @@ import { getTokenCookie } from "../cookie/cookie";
 import { useAppStore } from "@/store/App/useAppStore";
 import { apolloLink } from "./apollo-link";
 
-
-export const { getClient, } = registerApolloClient(() => {
+export const client = registerApolloClient(() => {
   return new ApolloClient({
-    cache: new InMemoryCache(),
+    cache: new InMemoryCache({ addTypename: false }),
     link: apolloLink,
     // link: new HttpLink({
     //   uri: "http://localhost:3000/graphql",
