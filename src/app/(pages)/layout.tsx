@@ -1,3 +1,5 @@
+// 'use client'
+import { useEffect, useState } from "react";
 import Nav from "../_containers/Nav";
 import { getUserService } from "@/services/user";
 
@@ -12,5 +14,12 @@ export default function RootLayout({
   //   redirect("login");
   // }
   // console.log(token)
+  // const [mount, setMount] = useState(false)
+  // useEffect(()=>{
+  //   setMount(true)
+  // },[])
+  // if(!mount){
+  //   return <div></div>
+  // }
   return <Nav>{children}</Nav>;
 }
