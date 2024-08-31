@@ -2,23 +2,40 @@ import { colors } from "@/types/colors";
 import clsx from "clsx";
 import React from "react";
 
-interface ButtonPropsI
-  extends React.DetailedHTMLProps<
-    React.ButtonHTMLAttributes<HTMLButtonElement>,
-    HTMLButtonElement
-  > {
+interface ButtonPropsI {
+  // extends React.DetailedHTMLProps<
+  //   React.ButtonHTMLAttributes<HTMLButtonElement>,
+  //   HTMLButtonElement
+  // >
   loading?: boolean;
+  color?: keyof typeof buttonColors;
+  type?: "submit" | "reset" | "button" | undefined;
+  children: React.ReactNode;
+  disabled?: boolean;
+  className?: string;
+  onClick?: React.MouseEventHandler<HTMLButtonElement> | undefined;
+}
+
+enum buttonColors {
+  primary = "bg-primary shadow-primary/20 hover:shadow-primary/40",
+  primary_hard = "bg-primary-hard shadow-primary-hard/20 hover:shadow-primary-hard/40",
+  primary_dark = "bg-primary-dark shadow-primary-dark/20 hover:shadow-primary-dark/40",
+  primary_light = "bg-primary-light shadow-primary-light/20 hover:shadow-primary-light/40",
+  danger = "bg-danger shadow-danger/20 hover:shadow-danger/40",
+  success = "bg-success shadow-success/20 hover:shadow-success/40",
 }
 
 const Button = ({
-  className,
+  color = "primary",
   type,
   children,
   disabled,
   loading,
+  className,onClick
 }: ButtonPropsI) => {
   const backgroundColor = clsx(
-    `text-white bg-primary hover:opacity-90 focus:ring-4 focus:ring-primary focus:ring-opacity-40 font-medium rounded-3xl text-sm px-5 py-2.5 me-2 mb-2 `,
+    `middle none center rounded-full py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md transition-all hover:shadow-lg focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none`,
+    buttonColors[color],
     className
   );
   // const classN = clsx({ [`bg-${colors.PRIMARY_DARK}`]: bgColor });
@@ -32,6 +49,7 @@ const Button = ({
     <button
       disabled={disabled || loading}
       type={type}
+      onClick={onClick}
       className={backgroundColor}
     >
       {loading && (

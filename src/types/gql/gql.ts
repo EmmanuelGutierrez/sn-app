@@ -13,6 +13,7 @@ import { TypedDocumentNode as DocumentNode } from '@graphql-typed-document-node/
  * Therefore it is highly recommended to use the babel or swc plugin for production.
  */
 const documents = {
+    "mutation createPost($data: CreatePostDto!) {\n  createPost(data: $data) {\n    _id\n  }\n}": types.CreatePostDocument,
     "mutation Login($loginUserInput: LoginInputDto!) {\n  login(loginUserInput: $loginUserInput) {\n    token\n  }\n}": types.LoginDocument,
     "query Me {\n  me {\n    _id\n    name\n    username\n    email\n    profile_image {\n      _id\n      asset_id\n      public_id\n      format\n      resource_type\n      bytes\n      url\n      secure_url\n      folder\n      original_filename\n    }\n    following {\n      followDate\n      user {\n        _id\n        username\n      }\n    }\n    followers {\n      followDate\n      user {\n        _id\n        username\n      }\n    }\n    birth_date\n  }\n}": types.MeDocument,
 };
@@ -31,6 +32,10 @@ const documents = {
  */
 export function gql(source: string): unknown;
 
+/**
+ * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
+ */
+export function gql(source: "mutation createPost($data: CreatePostDto!) {\n  createPost(data: $data) {\n    _id\n  }\n}"): (typeof documents)["mutation createPost($data: CreatePostDto!) {\n  createPost(data: $data) {\n    _id\n  }\n}"];
 /**
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */

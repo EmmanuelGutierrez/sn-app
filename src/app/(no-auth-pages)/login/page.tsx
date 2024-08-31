@@ -12,6 +12,7 @@ import { getCookie, getCookies } from "cookies-next";
 import { redirect, useRouter } from "next/navigation";
 import React, { useEffect, useLayoutEffect } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
+import { createSession } from "@/lib/session";
 
 const Page = () => {
   const { data, error, loading, login } = useLoginService();
@@ -29,24 +30,18 @@ const Page = () => {
 
   const router = useRouter();
 
-  // useLayoutEffect(() => {
-  //   // console.log("data", data);
-  //   // console.log("error", error?.cause, error?.message);
-  //   // console.log("loading", loading);
-  //   // const token =getTokenCookie();
-  //   console.log("token effect",token)
-  //   // if(!!token){
-  //   //   router.push("main");
-  //   // }
-  //   // console.log("tokenene", token);
-  // }, [router, token]);
+  // useEffect(() => {
+  //   if(getTokenCookie()){
+  //     router.push("/main");
+  //   }
+  // }, [getTokenCookie()]);
   const onSubmit: SubmitHandler<LoginInputDto> = async (formData) => {
     const res = await login({ variables: { loginUserInput: formData } });
 
     if (res.data?.login.token) {
-      setCookie(res.data.login.token);
+      await createSession(res.data.login.token);
       setToken(res.data.login.token);
-      router.push("main");
+      router.push('/main')
     }
   };
 

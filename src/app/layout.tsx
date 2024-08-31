@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { ApolloProvider } from "@/lib/apollo/apollo-provider";
 import { ZustandProviders } from "@/store/ZustandProviders";
+import RedirectWrapper from "./_containers/Redirect";
 
 const inter = Inter({ subsets: ["latin"] });
 
