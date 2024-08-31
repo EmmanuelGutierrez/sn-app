@@ -1,4 +1,5 @@
 import { deleteCookie } from "@/lib/cookie/cookie";
+import { deleteSession } from "@/lib/session";
 import { useAppStore } from "@/store/App/useAppStore";
 import { useUserStore } from "@/store/User/userStore";
 import { useQuery } from "@apollo/client";
@@ -10,8 +11,8 @@ export const useLogout = () => {
   const { setUserMenu } = useAppStore((s) => s);
   const router = useRouter();
 
-  const logout = () => {
-    deleteCookie();
+  const logout = async () => {
+    await deleteSession();
     setToken(null);
     setUser(null);
     setUserMenu(false);

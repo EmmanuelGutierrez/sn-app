@@ -1,0 +1,5 @@
+mutation createPost($data: CreatePostDto!) {
+  createPost(data: $data) {
+    _id
+  }
+}

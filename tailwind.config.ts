@@ -48,6 +48,12 @@ const config: Config = {
           dark: "#5f5f5f",
           light: "#d7d7d7",
         },
+        danger:{
+          DEFAULT:"#dc3545"
+        },
+        success:{
+          DEFAULT:"#28a745"
+        }
       },
       borderWidth: {
         1: "1px",

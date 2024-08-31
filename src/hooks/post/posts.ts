@@ -4,7 +4,7 @@ import {
   MutationLoginArgs,
   Query,
   TokenReturnDto,
-} from "@/@types/codegen/graphql";
+} from "@/types/gql/graphql";
 import { useSuspenseQuery, useMutation, gql } from "@apollo/client";
 
 const query = gql`

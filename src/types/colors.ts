@@ -12,4 +12,6 @@ export enum colors {
   PRIMARY_HARD = "primary-hard",
   PRIMARY_DARK = "primary-dark",
   PRIMARY_LIGHT = "primary-light",
+  DANGER="danger",
+  SUCCESS="success"
 }
